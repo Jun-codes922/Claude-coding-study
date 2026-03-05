@@ -1,1 +1,1 @@
-# Claude-coding-study
+클로드 코드로 대학교 공부와 프로젝트용
