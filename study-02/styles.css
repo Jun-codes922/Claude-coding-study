@@ -1,0 +1,363 @@
+/* ============================================
+   CSS 변수 (Color Palette)
+   ============================================ */
+:root {
+  --primary: #007AFF;
+  --success: #34C759;
+  --danger: #FF3B30;
+  --bg: #F5F5F5;
+  --card-bg: #FFFFFF;
+  --text: #333333;
+  --text-light: #999999;
+  --border: #E0E0E0;
+}
+
+/* ============================================
+   기본 스타일
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ============================================
+   컨테이너
+   ============================================ */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ============================================
+   제목
+   ============================================ */
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--text);
+}
+
+/* ============================================
+   입력 영역
+   ============================================ */
+.input-section {
+  display: flex;
+  gap: 10px;
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#todoInput {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#todoInput:focus {
+  border-color: var(--primary);
+}
+
+#todoInput::placeholder {
+  color: var(--text-light);
+}
+
+#addBtn {
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+#addBtn:hover {
+  opacity: 0.85;
+}
+
+#addBtn:active {
+  transform: scale(0.98);
+}
+
+/* ============================================
+   카테고리 선택
+   ============================================ */
+.category-select {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.category-select:focus {
+  border-color: var(--primary);
+}
+
+/* ============================================
+   필터 섹션
+   ============================================ */
+.filter-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--card-bg);
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  background-color: #F0F0F0;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  background-color: #E8E8E8;
+}
+
+.filter-btn.active {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* ============================================
+   할 일 목록
+   ============================================ */
+.todo-list {
+  list-style: none;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item:hover {
+  background-color: #FAFAFA;
+}
+
+.todo-item.completed {
+  opacity: 0.6;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: var(--text-light);
+}
+
+/* ============================================
+   체크박스
+   ============================================ */
+.todo-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: var(--success);
+}
+
+/* ============================================
+   할 일 텍스트
+   ============================================ */
+.todo-text {
+  flex: 1;
+  user-select: none;
+  word-break: break-word;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+/* ============================================
+   카테고리 배지
+   ============================================ */
+.category-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.category-badge.work {
+  background-color: #E3F2FD;
+  color: #1976D2;
+}
+
+.category-badge.personal {
+  background-color: #FFF3E0;
+  color: #E65100;
+}
+
+.category-badge.study {
+  background-color: #F3E5F5;
+  color: #7B1FA2;
+}
+
+/* ============================================
+   삭제 버튼
+   ============================================ */
+.delete-btn {
+  padding: 6px 10px;
+  background-color: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.delete-btn:hover {
+  background-color: var(--danger);
+  color: white;
+}
+
+/* ============================================
+   반응형 디자인
+   ============================================ */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .input-section {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #addBtn {
+    width: 100%;
+  }
+
+  .category-select {
+    width: 100%;
+  }
+
+  .filter-section {
+    gap: 8px;
+  }
+
+  .filter-label {
+    width: 100%;
+  }
+
+  .filter-btn {
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .todo-item {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .category-badge {
+    font-size: 10px;
+  }
+
+  .delete-btn {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px 8px;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .input-section {
+    padding: 16px;
+  }
+
+  .filter-section {
+    padding: 12px 16px;
+    gap: 6px;
+  }
+
+  .filter-label {
+    font-size: 13px;
+  }
+
+  .filter-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .todo-item {
+    padding: 10px 12px;
+  }
+
+  .category-badge {
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+}

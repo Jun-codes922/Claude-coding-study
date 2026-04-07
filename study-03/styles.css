@@ -1,0 +1,438 @@
+/* ===== CSS 변수 정의 ===== */
+:root {
+  --primary: #4F46E5;
+  --success: #10B981;
+  --danger: #EF4444;
+  --bg: #F9FAFB;
+  --card-bg: #FFFFFF;
+  --text: #111827;
+  --text-light: #6B7280;
+  --border: #E5E7EB;
+  --easy-color: #DBEAFE;
+  --medium-color: #FCD34D;
+  --hard-color: #FECACA;
+  --all-color: #E9D5FF;
+}
+
+/* ===== 기본 스타일 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* ===== 헤더 ===== */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* ===== 화면 전환 ===== */
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* ===== 홈 화면 ===== */
+.home-content {
+  text-align: center;
+}
+
+.home-content h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+/* ===== 카테고리 버튼 ===== */
+.category-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.category-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: 4px;
+}
+
+.category-btn:hover {
+  background-color: rgba(79, 70, 229, 0.05);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.category-btn.active {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.category-title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.category-count {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ===== 난이도 선택 ===== */
+.difficulty-section {
+  margin-bottom: 32px;
+}
+
+.difficulty-section h3 {
+  font-size: 14px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.difficulty-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.difficulty-btn {
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background-color: var(--card-bg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.difficulty-btn:hover {
+  border-color: var(--primary);
+  background-color: rgba(79, 70, 229, 0.05);
+}
+
+.difficulty-btn.active {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.difficulty-easy.active {
+  background-color: var(--easy-color);
+  border-color: #0EA5E9;
+}
+
+.difficulty-medium.active {
+  background-color: var(--medium-color);
+  border-color: #F59E0B;
+}
+
+.difficulty-hard.active {
+  background-color: var(--hard-color);
+  border-color: #EF4444;
+}
+
+.difficulty-all.active {
+  background-color: var(--all-color);
+  border-color: #A855F7;
+}
+
+/* ===== 버튼 ===== */
+.button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--text-light);
+  color: white;
+}
+
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: white;
+  margin-top: 16px;
+}
+
+.btn-danger:hover {
+  opacity: 0.9;
+}
+
+.btn-hint {
+  background-color: #FEF3C7;
+  color: #D97706;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.btn-hint:hover {
+  background-color: #FDE68A;
+}
+
+.btn-icon {
+  background-color: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.btn-icon:hover {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* ===== 푸터 버튼 ===== */
+.footer-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+/* ===== 게임 화면 - 헤더 ===== */
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.game-info {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.category-label {
+  font-weight: 600;
+  background-color: var(--primary);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.progress-text {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.game-score {
+  display: flex;
+  align-items: center;
+}
+
+.score-display {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ===== 프로그래스 바 ===== */
+.progress-bar-container {
+  background-color: var(--border);
+  height: 6px;
+  border-radius: 3px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+#progressBar {
+  background-color: var(--primary);
+  height: 100%;
+  transition: width 0.3s ease;
+  width: 0%;
+}
+
+/* ===== 퀴즈 컨테이너 ===== */
+.quiz-container {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+.quiz-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== 질문 섹션 ===== */
+.question-section {
+  margin-bottom: 30px;
+}
+
+.question-text {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.question-number {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+/* ===== 선택지 컨테이너 ===== */
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== 힌트 섹션 ===== */
+.hint-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hint-text {
+  background-color: #FEF3C7;
+  color: #92400E;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 4px solid #D97706;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ===== 반응형 디자인 ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 0;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .difficulty-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .question-text {
+    font-size: 18px;
+  }
+
+  .game-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 20px 0;
+  }
+
+  .header h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .quiz-container {
+    padding: 20px;
+  }
+
+  .question-text {
+    font-size: 16px;
+  }
+
+  .category-btn {
+    padding: 12px;
+  }
+
+  .footer-buttons {
+    flex-direction: column;
+  }
+
+  .btn-icon {
+    width: 100%;
+  }
+}
